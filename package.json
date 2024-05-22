@@ -1,0 +1,43 @@
+{
+  "name": "storybook",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "vue-tsc --p ./tsconfig.build.json && vite build",
+    "storybook": "storybook dev -p 6006",
+    "test-storybook": "test-storybook --coverage",
+    "test:unit": "vitest --coverage --watch=false",
+    "test:merge": "mkdir --parents coverage/merged && cp coverage/storybook/coverage-storybook.json coverage/merged/coverage-storybook.json && cp coverage/unit/coverage-final.json coverage/merged/coverage-unit.json && npx nyc merge coverage/merged coverage/coverage-final.json"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.4.0",
+    "@storybook/addon-a11y": "^8.1.2",
+    "@storybook/addon-coverage": "^1.0.3",
+    "@storybook/addon-essentials": "^8.1.2",
+    "@storybook/addon-interactions": "^8.1.2",
+    "@storybook/addon-links": "^8.1.2",
+    "@storybook/blocks": "^8.1.2",
+    "@storybook/test": "^8.1.2",
+    "@storybook/test-runner": "^0.18.1",
+    "@storybook/testing-library": "^0.2.2",
+    "@storybook/vue3": "^8.1.2",
+    "@storybook/vue3-vite": "^8.1.2",
+    "@types/node": "^20.12.12",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitest/coverage-istanbul": "^1.6.0",
+    "storybook": "^8.1.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.6.0",
+    "vue": "^3.4.27",
+    "vue-tsc": "^2.0.6"
+  },
+  "dependencies": {
+    "wait-on": "^7.2.0"
+  }
+}

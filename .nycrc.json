@@ -1,0 +1,9 @@
+{
+    "extension": [
+        ".vue",
+        ".js",
+        "jsx",
+        ".ts",
+        "tsx"
+    ]
+}

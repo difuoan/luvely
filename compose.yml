@@ -1,0 +1,29 @@
+networks:
+  frontend:
+    name: reverse-proxy
+    external: true
+    driver: ${NETWORKS_DRIVER}
+
+services:
+  storybook:
+    container_name: storybook
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - .:/app
+    command: ./entrypoint.sh
+    ports:
+      # external port for traefik
+      - "6006:6006"
+      # internal port for storybook-test
+      - "6006"
+    labels:
+      # enable traefik
+      - "traefik.enable=true"
+      - "traefik.docker.network=reverse-proxy"
+      # http
+      - "traefik.http.routers.storybook.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.storybook.entrypoints=web"
+    networks:
+      - frontend
