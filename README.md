@@ -14,7 +14,7 @@ Dockerized storybook component library with all the goodies!
 ## Installing & Running Repository
 
 ### Prerequisites
-* [Docker Compose](https://docs.docker.com/compose/)
+* working [Docker](https://www.docker.com/) installation
 * a [Chromatic](https://www.chromatic.com/) account (for visual testing)
 
 ### Clone & Install Repository
