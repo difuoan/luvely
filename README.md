@@ -24,7 +24,6 @@ make build
 ```
 Make sure to update the .env file with your credentials
 ```env
-CHROMATIC_PROJECT_TOKEN=chpt_XXXXXXXXXXXXXXXX
 GIT_EMAIL=lucas.j.venturini@gmail.com
 ```
 
