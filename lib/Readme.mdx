@@ -50,19 +50,19 @@ make test
 
 ## All `make` Commands
 ```make
-init # initialize env
-up # start storybook
-start # same as up
-down # shut down storybook
-stop # same as down
-tail # docker logs
-build # install everything needed
+init       # initialize env
+up         # start storybook
+start      # same as up
+down       # shut down storybook
+stop       # same as down
+tail       # docker logs
+build      # install everything needed
 restart
-clear # remove env
-ps # show containers
-test.unit # run vitests
+clear      # remove env
+ps         # show containers
+test.unit  # run vitests
 test.story # run storybook tests
-test # run all tests
+test       # run all tests
 ```
 
 ## Knowledge
