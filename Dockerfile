@@ -3,6 +3,9 @@ FROM node:20-bookworm
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
 
+# make git findable so we can use it
+ENV PATH="${PATH}:/usr/bin/git"
+
 WORKDIR /app
 
 ENV PLAYWRIGHT_BROWSERS_PATH=/usr/playwright
