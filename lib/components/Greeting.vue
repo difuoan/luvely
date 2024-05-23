@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import './greeting.css';
 import { createGreeting } from '../utils/createGreeting.ts'
 
 defineProps<{ name?: string }>()
