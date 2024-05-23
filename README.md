@@ -1,9 +1,61 @@
-# Vue 3 + TypeScript + Vite
+# storybook-vvd
+storybook + vite + vue + docker + visual tests
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Knowledge
+* [node.js](https://nodejs.org/en)
+* [npm](https://docs.npmjs.com/)
+* [Vue](https://vuejs.org/)
+* [Vite](https://vitejs.dev/)
+* [Docker](https://www.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/)
+* [GNU make](https://www.gnu.org/software/make/manual/make.html)
 
-## Recommended Setup
+## Installing & Running Repository
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+### Prerequisites
+* a [Chromatic](https://www.chromatic.com/) account
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+### Clone & Install Repository
+```bash
+git clone https://github.com/difuoan/storybook
+cd storybook/
+make init
+make build
+```
+Make sure to update the .env file with your credentials
+```env
+CHROMATIC_PROJECT_TOKEN=chpt_XXXXXXXXXXXXXXXX
+GIT_EMAIL=lucas.j.venturini@gmail.com
+```
+
+### Run Repository
+```bash
+make up
+```
+
+### Enable Visual Tests
+<img src="https://github.com/difuoan/storybook-vvd/blob/master/assets/visualTestingPanel.png" alt="Visual Testing panel inside the storybook UI" width="25%" align="right"/>
+Follow the setup process further. The next steps will be described in the "Visual Tests" panel inside the storybook UI (see screenshot &rarr;)
+<br clear="right"/>
+
+### Run Tests
+```
+make test
+```
+
+### All `make` Commands
+```make
+init # initialize env
+up # start storybook
+start # same as up
+down # shut down storybook
+stop # same as down
+tail # docker logs
+build # install everything needed
+restart
+clear # remove env
+ps # show containers
+test.unit # run vitests
+test.story # run storybook tests
+test # run all tests
+```
