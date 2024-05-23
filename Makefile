@@ -1,9 +1,6 @@
 init:
 	cp -n .env.example .env
 
-init-prod:
-	cp -n .env.example .env
-
 up:
 	docker compose up -d
 
