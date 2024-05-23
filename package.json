@@ -3,6 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/index.d.ts",
+  "main": "./dist/storybook.umd.cjs",
+  "module": "./dist/storybook.js",
+  "exports": {
+    ".": {
+      "import": "./dist/storybook.js",
+      "require": "./dist/storybook.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
@@ -11,6 +23,9 @@
     "test-storybook": "test-storybook --coverage",
     "test:unit": "vitest --coverage --watch=false",
     "test:merge": "mkdir --parents coverage/merged && cp coverage/storybook/coverage-storybook.json coverage/merged/coverage-storybook.json && cp coverage/unit/coverage-final.json coverage/merged/coverage-unit.json && npx nyc merge coverage/merged coverage/coverage-final.json"
+  },
+  "dependencies": {
+    "vue": "^3.4.27"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
@@ -34,10 +49,6 @@
     "vite-plugin-dts": "^3.9.1",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.6.0",
-    "vue": "^3.4.27",
     "vue-tsc": "^2.0.6"
-  },
-  "dependencies": {
-    "wait-on": "^7.2.0"
   }
 }
