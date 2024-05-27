@@ -1,0 +1,42 @@
+networks:
+  frontend:
+    name: reverse-proxy
+    external: true
+    driver: ${NETWORKS_DRIVER}
+
+services:
+  storybook:
+    container_name: storybook
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - .:/app
+    ports:
+      # external port for traefik
+      - "6006:6006"
+      - "5173:5173"
+      # # internal port for storybook-test
+      # - "6006"
+      # - "5173"
+    # expose:
+    #   - 5173
+    #   - 6006
+    labels:
+      # enable traefik
+      - "traefik.enable=true"
+      - "traefik.docker.network=reverse-proxy"
+      # http
+      # - storybook
+      - "traefik.http.routers.storybook.rule=Host(`${STORYBOOK_DOMAIN}`)"
+      - "traefik.http.routers.storybook.entrypoints=web"
+      - "traefik.http.routers.storybook.service=storybook_service"
+      - "traefik.http.services.storybook_service.loadbalancer.server.port=6006"
+      # - vite app
+      - "traefik.http.routers.vite.rule=Host(`${VITE_DOMAIN}`)"
+      - "traefik.http.routers.vite.entrypoints=web"
+      - "traefik.http.routers.vite.service=vite_service"
+      - "traefik.http.services.vite_service.loadbalancer.server.port=5173"
+    networks:
+      - frontend
+    command: ./entrypoint.sh
