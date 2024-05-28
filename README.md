@@ -27,7 +27,7 @@ Dockerized storybook component library with all the goodies!
 
 ```bash
 git clone https://github.com/difuoan/storybook
-cd storybook/
+cd storybook
 make init
 ```
 
