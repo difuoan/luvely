@@ -10,6 +10,8 @@ Dockerized storybook component library with all the goodies!
     * [Run Repository](#run-repository)
     * [Enable Visual Tests](#enable-visual-tests)
 * [Run Tests](#run-tests)
+    * [Run Individual Tests](#run-individual-tests)
+* [Playground](#playground)
 * [All `make` Commands](#all-make-commands)
 * [Knowledge](#knowledge)
 * [Issues](#issues)
@@ -31,7 +33,7 @@ make init
 
 Make sure to update the `.env` file with your credentials
 
-```env
+```bash
 GIT_EMAIL=lucas.j.venturini@gmail.com
 ```
 
@@ -43,7 +45,7 @@ make build
 
 ### Run Repository
 
-Unless you have changed the `DOMAIN` variable in the `.env` or `.env.example` file the storybook UI should be reachable under [storybook.localhost](http://storybook.localhost) after you run the following command.
+Unless you have changed the `DOMAIN` variables in the `.env` or `.env.example` file the storybook UI should be reachable under [storybook.localhost](http://storybook.localhost) after you run the following command.
 
 ```bash
 make up
@@ -59,15 +61,31 @@ Follow the setup process further. The next steps will be described in the "Visua
 
 ## Run Tests
 
-You can view the results in the "Coverage Report" page in the storybook UI.
+You can view the results in the "Report" pages in the storybook UI.
 
-```
+```bash
 make test
+```
+
+### Run Individual Tests
+
+```bash
+make test-e2e       # run end to end tests
+make test-unit      # run unit tests
+make test-storybook # run component tests
+```
+
+## Playground
+
+You can create a playground to manually test your components based on the `src` folder. It will behave like a regular single page application (no router installed). The playground will run automatically when you run `make up`, so you probably won't need the following command.
+
+```bash
+make playground
 ```
 
 ## All `make` Commands
 
-```make
+```bash
 init:           # initialise the env
 up:             # start the container
 start:          # start the container
@@ -97,8 +115,11 @@ test-e2e:       # run end to end tests
 * <a href="https://www.gnu.org/software/make/manual/make.html" target="_blank">GNU make</a>
 * <a href="https://doc.traefik.io/traefik/providers/docker/" target="_blank">Traefik</a>
 * <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>
+* <a href="https://storybook.js.org/" target="_blank">Storybook</a>
 
 ## Issues
 
-* If the Coverage Report page doesn't work it's probably because the tests haven't been exectured yet. Read the [Run Tests](#run-tests) section.
+* If the "Report" pages doesn't work it's probably because the tests haven't been exectured yet. Read the [Run Tests](#run-tests) section.
 * If the `.env` file keeps resetting it's probably because you have re-initialised the project. Don't call `make init` or change the variables in the `.env.example` file instead.
+* If you want to execute npm commands use `make login` to ensure they get executed from within the container and as the correct user.
+* If you find a console output about `Download the React DevTool` or something like that you can probably safely ignore it by right-clicking the message and hiding it from the context menu.
