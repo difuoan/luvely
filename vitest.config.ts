@@ -11,6 +11,8 @@ export default mergeConfig(
       environment: 'jsdom',
       exclude: [...configDefaults.exclude, 'e2e/**'],
       root: fileURLToPath(new URL('./', import.meta.url)),
+      reporters: ["html"],
+      outputFile: "./coverage/unit/html/output.html",
       coverage: {
         all: true,  // Include files with 0% coverage in the report.
         provider: 'istanbul', // or 'v8'

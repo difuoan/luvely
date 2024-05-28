@@ -1,1 +1,1 @@
-{ "extension": [".vue",".js","jsx",".ts","tsx"], "include": ["lib/components/**/*"] }
+{ "extension": [".vue",".js","jsx",".ts","tsx"], "include": ["lib/**/*"] }
