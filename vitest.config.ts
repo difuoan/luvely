@@ -17,7 +17,7 @@ export default mergeConfig(
         include: ['lib/utils/**/*'],
         // Omit test code from the report (both Storybook and Vitest)
         exclude: ['lib/**/*.stories.{ts,tsx}', 'lib/**/*.test.{ts,tsx}'],
-        reporter: ["text", "text-summary", "json", "json-summary"],
+        reporter: ["lcov"],
         reportsDirectory: "coverage/unit",
       },
     },
