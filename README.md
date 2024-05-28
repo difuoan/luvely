@@ -86,22 +86,22 @@ make playground
 ## All `make` Commands
 
 ```bash
-init:           # initialise the env
-up:             # start the container
-start:          # start the container
-down:           # end the container
-stop:           # end the container
-tail:           # echo logs
-build:          # build image
-restart:        # restart container
-clear:          # destroy environment
-ps:             # print all docker containers
-login:          # open bash in container
-playground:     # run vite page
-test:           # run all tests
-test-storybook: # run storybook (component) tests
-test-unit:      # run unit tests
-test-e2e:       # run end to end tests
+init           # initialise the env
+up             # start the container
+start          # start the container
+down           # end the container
+stop           # end the container
+tail           # echo logs
+build          # build image
+restart        # restart container
+clear          # destroy environment
+ps             # print all docker containers
+login          # open bash in container
+playground     # run vite page
+test           # run all tests
+test-storybook # run storybook (component) tests
+test-unit      # run unit tests
+test-e2e       # run end to end tests
 ```
 
 ## Knowledge
