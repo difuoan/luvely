@@ -28,6 +28,9 @@ ps: # print all docker containers
 login: # open bash in container
 	docker compose exec --user node storybook bash
 
+build-lib: # build the actual library (not the docker)
+	docker compose exec --user node storybook npm run build
+
 playground: # run vite page
 	docker compose exec --user node storybook npm run dev
 

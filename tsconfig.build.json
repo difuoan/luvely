@@ -1,5 +1,10 @@
 {
   "extends": "./tsconfig.app.json",
+  "exclude": [
+    "src/**/__tests__/*",
+    "lib/**/stories/*",
+    "lib/**/__tests__/*"
+  ],
   "include": [
     "lib"
   ],
