@@ -1,5 +1,5 @@
 init: # initialise the env
-	cp --update=none .env.example .env
+	cp .env.example .env
 
 up: # start the container
 	docker compose up -d
