@@ -2,10 +2,10 @@
   "name": "luvely",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
-  "main": "dist/luvely.js",
+  "main": "dist/luvely.umd.js",
   "types": "dist/lib/main.d.ts",
   "style": "dist/style.css",
+  "module": "dist/luvely.es.js",
   "files": [
     "dist"
   ],

@@ -16,9 +16,17 @@ export default defineConfig({
     copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, 'lib/main.ts'),
-      formats: ['es']
-    }, rollupOptions: {
+      name: "luvely",
+      formats: ['es', "umd"],
+      fileName: (format) => `luvely.${format}.js`
+    },
+    rollupOptions: {
       external: ['vue'],
+      output: {
+        globals: {
+          vue: "Vue"
+        }
+      }
     }
   },
   resolve: {
