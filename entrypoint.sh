@@ -8,6 +8,4 @@ npm install
 echo CI
 
 # run the storybook
-# npm run storybook
 npm run storybook & npm run dev
-# npm run dev

@@ -32,5 +32,4 @@ dist-ssr
 test-results/
 playwright-report/
 coverage/artifacts
-dist/
 .env
