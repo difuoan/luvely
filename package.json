@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "main": "dist/luvely.js",
+  "types": "dist/lib/main.d.ts",
+  "style": "dist/style.css",
   "files": [
-    "dist/",
-    "dist/luvely.js",
-    "dist/style.css",
-    "dist/lib/main.d.ts"
+    "dist"
   ],
   "scripts": {
     "dev": "vite --host",
