@@ -16,10 +16,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 async function test(context: PlayFunctionContext<VueRenderer>, finalText: string) {
-    let canvas = within(context.canvasElement)
-    let span = canvas.getByTestId("span")
+    const canvas = within(context.canvasElement)
+    const span = canvas.getByTestId("span")
     await expect(span.innerText).toBe(`${context.args.text}: `)
-    let button = canvas.getByTestId("state")
+    const button = canvas.getByTestId("state")
     await expect(button.innerText).toBe(`idle`)
     await button.click()
     await expect(button.innerText).toBe(`pending`)
@@ -34,7 +34,7 @@ export const Success: Story = {
         msw: {
             handlers: [
                 http.get('https://your-restful-endpoint/', async () => {
-                    let response: HttpResponse = new HttpResponse("Hello World!", { status: 200 })
+                    const response: HttpResponse = new HttpResponse("Hello World!", { status: 200 })
                     await delay(500);
                     return response
                 }),
@@ -50,7 +50,7 @@ export const Error: Story = {
         msw: {
             handlers: [
                 http.get('https://your-restful-endpoint/', async () => {
-                    let response: HttpResponse = new HttpResponse("Goodbye World!", { status: 500 })
+                    const response: HttpResponse = new HttpResponse("Goodbye World!", { status: 500 })
                     await delay(500);
                     return response
                 }),
@@ -66,7 +66,7 @@ export const Text: Story = {
         msw: {
             handlers: [
                 http.get('https://your-restful-endpoint/', async () => {
-                    let response: HttpResponse = new HttpResponse("Goodbye World!", { status: 200 })
+                    const response: HttpResponse = new HttpResponse("Goodbye World!", { status: 200 })
                     await delay(500);
                     return response
                 }),
