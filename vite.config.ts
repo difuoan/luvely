@@ -17,7 +17,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'lib/main.ts'),
       name: "luvely",
-      formats: ['es', "umd"],
+      // formats: ['es', "umd"],
       fileName: (format) => `luvely.${format}.js`
     },
     rollupOptions: {

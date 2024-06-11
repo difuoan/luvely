@@ -4,7 +4,6 @@
   "private": true,
   "main": "dist/luvely.umd.js",
   "types": "dist/lib/main.d.ts",
-  "style": "dist/style.css",
   "module": "dist/luvely.es.js",
   "files": [
     "dist"
