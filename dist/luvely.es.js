@@ -1,3 +1,4 @@
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode("button{color:#fff;background:#00f;border:0;cursor:pointer;padding:5px 10px;border-radius:5px}button:hover{color:#fff;background:navy;border:0;cursor:pointer;padding:5px 10px;border-radius:5px}")),document.head.appendChild(e)}}catch(r){console.error("vite-plugin-css-injected-by-js",r)}})();
 import { defineComponent as a, ref as u, openBlock as l, createElementBlock as p, createElementVNode as c, toDisplayString as o, unref as _ } from "vue";
 async function d(e, t = "https://your-restful-endpoint") {
   console.log("pending"), e.value = "pending", await fetch(t).then((n) => (n.ok ? e.value = "success" : e.value = "error", console.log(e.value), n)).catch(() => {
